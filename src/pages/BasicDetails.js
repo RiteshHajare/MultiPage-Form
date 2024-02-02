@@ -15,8 +15,10 @@ function BasicDetails() {
     nationality: "",
   });
 
-  function handleClick() {
-    navigate("/address", { state: basicForm });
+  function handleClick(e) {
+    if (e.target.form.checkValidity()) {
+      navigate("/address", { state: basicForm });
+    }
   }
 
   return (

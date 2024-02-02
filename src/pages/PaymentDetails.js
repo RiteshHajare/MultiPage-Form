@@ -17,7 +17,7 @@ function PaymentDetails() {
 
   function handleClick(e) {
     e.preventDefault();
-    setRenderComp(true);
+    if (e.target.form.checkValidity()) setRenderComp(true);
   }
 
   if (renderComp) {

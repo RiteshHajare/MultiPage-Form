@@ -15,10 +15,12 @@ function Address() {
     zipcode: null,
   });
 
-  function handleClick() {
-    navigate("/professionaldetails", {
-      state: { basicdetails: location.state, addressdetails: addressForm },
-    });
+  function handleClick(e) {
+    if (e.target.form.checkValidity()) {
+      navigate("/professionaldetails", {
+        state: { basicdetails: location.state, addressdetails: addressForm },
+      });
+    }
   }
 
   return (

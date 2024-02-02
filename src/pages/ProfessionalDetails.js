@@ -26,15 +26,15 @@ function ProfessionalDetails() {
   }
 
   function handleClick(e) {
-    e.preventDefault();
-    console.log(location.state, ProfessionalDetailstForm);
-    navigate("/paymentdetails", {
-      state: {
-        basicdetails: location.state.basicdetails,
-        addressdetails: location.state.addressdetails,
-        professionaldetails: ProfessionalDetailstForm,
-      },
-    });
+    if (e.target.form.checkValidity()) {
+      navigate("/paymentdetails", {
+        state: {
+          basicdetails: location.state.basicdetails,
+          addressdetails: location.state.addressdetails,
+          professionaldetails: ProfessionalDetailstForm,
+        },
+      });
+    }
   }
 
   return (

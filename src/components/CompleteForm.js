@@ -108,7 +108,9 @@ function CompleteForm({ forms }) {
             </p>
             <p className="my-2">
               <strong>Working eligibility(IN) : </strong>
-              {forms.professionaldetails.radio}{" "}
+              {forms.professionaldetails?.radio
+                ? forms.professionaldetails?.radio
+                : "No Data"}{" "}
             </p>
           </div>
         </div>
